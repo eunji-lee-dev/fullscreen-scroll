@@ -1,0 +1,140 @@
+* {box-sizing: border-box}
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+.fbx {
+	display: flex;
+	align-items: center;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	margin-top: 40px;
+	z-index: 1;
+	padding: 0 25px;
+}
+
+.header__container {
+	height: 70px;
+	background-color: rgba(255,255,255,.25);
+	max-width: 1024px;
+	margin: 0 auto;
+	justify-content: space-between;
+	padding: 0 30px;
+	box-shadow: 0 2px 4px rgba(255,255,255,.05),
+				0 7px 14px rgba(255,255,255,.14);
+}
+
+.header__container .fas {
+	cursor: pointer;
+	font-size: 18px;
+	color: #fff;
+}
+
+.header__container .fas:hover {
+	color: #e5e5e5;
+}
+
+.logo {
+	font-weight: 500;
+	font-size: 22px;
+	color: #fff;
+}
+
+section {
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 0 15px;
+}
+
+section.right {
+	background-position: left center;
+}
+
+section:first-child {
+	background-size: cover;
+}
+
+.sec_container {
+	width: 1024px;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 140px 0;
+	color: #fff;
+}
+
+.right .sec_container {
+	text-align: right;
+}
+
+.sec_container.home {
+	padding-top: 250px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 56px;
+	font-weight: 300;
+	margin-bottom: 40px;
+}
+
+.sec_link {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 20px 40px;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	line-height: 1;
+	border: 3px solid rgba(255,255,266,.56);
+	border-radius: 35px;
+	display: inline-block;
+	transition: border 0.3s ease-in-out;
+}
+
+.sec_link:hover {
+	border-color: #fff;
+}
+
+h2 {
+	font-weight: 300;
+	font-size: 40px;
+	margin-bottom: 40px;
+}
+
+.sec__content {
+	line-height: 1.5;
+	margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 1024px) {
+
+	.fullscreen {
+		height: 100vh;
+		overflow: hidden;
+		position: relative;
+	}
+	.fullscreen .main__content {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		transition: transform 0.56s ease-out;
+
+	}
+	.fullscreen section {
+		height: 100vh;
+		padding-top: 110px;
+	}
+	.fullscreen .sec_container.home {
+		padding-top: 140px;
+
+	}
+}
