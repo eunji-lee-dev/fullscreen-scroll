@@ -8,43 +8,24 @@ header {
 	width: 100%;
 	top: 0;
 	left: 0;
-	margin-top: 40px;
 	z-index: 1;
-	padding: 0 25px;
 }
 
 .header__container {
-	height: 70px;
+	height: 50px;
 	background-color: rgba(255,255,255,.25);
-	max-width: 1024px;
-	margin: 0 auto;
-	justify-content: space-between;
-	padding: 0 30px;
+	width: 100%;
+	margin: auto;
+	padding: 15px 0;
 	box-shadow: 0 2px 4px rgba(255,255,255,.05),
-	0 7px 14px rgba(255,255,255,.14);
-}
-
-.header__container .fas {
-	cursor: pointer;
-	font-size: 18px;
-	color: #fff;
-}
-
-.header__container .fas:hover {
-	color: #e5e5e5;
+				0 7px 14px rgba(255,255,255,.14);
+	text-align: center;
 }
 
 .logo {
 	font-weight: 300;
 	font-size: 20px;
 	color: #fff;
-}
-
-/* MAIN */
-.fbx {
-	/* flexbox */
-	display: flex;
-	align-items: center;
 }
 
 section {
