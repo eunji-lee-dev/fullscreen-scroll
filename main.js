@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
 
-	if (document.body.classList.contains('fullscreen') && window.innerWidth > 1024) {
+	if (document.body.classList.contains('fullscreen') && window.innerWidth < 2000) {
 		const  sections = document.querySelectorAll('section');
 		const content = document.querySelector('.main__content');
 		let spinValue = 0;
@@ -14,6 +14,19 @@ window.addEventListener('load', () => {
 		}
 
 		document.querySelector('.section_navigation').innerHTML = secNav;
+
+		const btns = document.querySelectorAll('.sec_button');
+
+		btns[0].classList.add('active');
+
+		for (let i=0; i<btns.length; i++) {
+			btns[i].addEventListener('click', function() {
+				document.querySelector('.sec_button.active').classList.remove('active');
+				this.classList.add('active');
+				spinValue = i;
+				scrollContent(spinValue);
+			});
+		}
 
 		window.addEventListener('mousewheel',(e) => {
 			if (canScroll) {
@@ -39,6 +52,9 @@ window.addEventListener('load', () => {
 
 		function scrollContent(count) {
 			content.setAttribute('style', 'transform: translateY(-'+ count*100 +'vh);');
+
+			document.querySelector('.sec_button.active').classList.remove('active');
+			btns[count].classList.add('active');
 		}
 	}
 });

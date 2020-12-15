@@ -49,7 +49,7 @@ header {
 section {
 	background-position: right center;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: contain ;
 	padding: 0 15px;
 }
 
@@ -112,9 +112,13 @@ h2 {
 .sec__content {
 	line-height: 1.5;
 	margin-bottom: 40px;
+	padding-right: 30%;
 }
 
-@media only screen and (min-width: 1024px) {
+.sec__content:nth-child(2) {
+	padding-right: 0;
+}
+@media only screen and (max-width: 2000px) {
 
 	.fullscreen {
 		height: 100vh;
@@ -138,9 +142,71 @@ h2 {
 	}
 	.section_navigation {
 		position: fixed;
-		background-color: #fff;
+		background-color: rgba(255,255,255,.25);
 		right: 40px;
 		top: calc(50% + 55px);
 		transform: translateY(-50%);
+		padding: 20px 0;
+		border-radius: 35px;
+		box-shadow: 0 2px 4px rgba(0,0,0,.07),
+					0 7px 14px rgba(0,0,0,0.14);
 	}
+	.sec_button {
+		position: relative;
+		width: 40px;
+		height: 36px;
+		cursor: pointer;
+	}
+	.sec_button::after {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		left: 10px;
+		top: 8px;
+		border: 3px solid #a5a5a5;
+		border-radius: 50%;
+		transition: border 0.26s ease-in-out;
+	}
+	.sec_button.active::after {
+		border-color: #fff;
+	}
+	.sec_button span {
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+		white-space: nowrap;
+		right: 40px;
+		top: 7px;
+		color: #fff;
+		background-color: rgba(0,0,0,.4);
+		padding: 4px 12px;
+		border-radius: 15px;
+		transition: all 0.25s ease-in-out;
+	}
+	.sec_button:hover span {
+		visibility: visible;
+		opacity: 1;
+		transform: translateX(-10px);
+	}
+}
+@media (max-width: 1237px){
+	section {
+		background-size: cover;
+		padding-right: 10%;
+	}
+	section:first-child {
+		padding-right: 15px;
+	}
+}
+@media (max-width: 720px){
+	h1 {
+		font-size: 45px;
+	}
+	.sec_link {
+		padding: 15px 30px;
+		font-size: 16px;
+		font-weight: 400;
+	}
+
 }
