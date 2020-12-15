@@ -1,9 +1,19 @@
 window.addEventListener('load', () => {
+
 	if (document.body.classList.contains('fullscreen') && window.innerWidth > 1024) {
 		const  sections = document.querySelectorAll('section');
 		const content = document.querySelector('.main__content');
 		let spinValue = 0;
 		let canScroll = true;
+		secNav = '';
+
+		document.body.insertAdjacentHTML('beforeend', '<div class="section_navigation"></div>');
+
+		for (let i = 0; i < sections.length; i++) {
+			secNav += '<div class="sec_button"><span>'+ sections[i].dataset.title +'</span></div>';
+		}
+
+		document.querySelector('.section_navigation').innerHTML = secNav;
 
 		window.addEventListener('mousewheel',(e) => {
 			if (canScroll) {

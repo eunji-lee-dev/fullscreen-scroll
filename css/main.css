@@ -135,6 +135,12 @@ h2 {
 	}
 	.fullscreen .sec_container.home {
 		padding-top: 140px;
-
+	}
+	.section_navigation {
+		position: fixed;
+		background-color: #fff;
+		right: 40px;
+		top: calc(50% + 55px);
+		transform: translateY(-50%);
 	}
 }
