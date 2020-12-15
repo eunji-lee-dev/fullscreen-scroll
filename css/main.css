@@ -1,14 +1,8 @@
+/* COMMON */
 * {box-sizing: border-box}
+body { font-family: 'Poppins', sans-serif; }
 
-body {
-	font-family: 'Poppins', sans-serif;
-}
-
-.fbx {
-	display: flex;
-	align-items: center;
-}
-
+/* HEADER */
 header {
 	position: fixed;
 	width: 100%;
@@ -27,7 +21,7 @@ header {
 	justify-content: space-between;
 	padding: 0 30px;
 	box-shadow: 0 2px 4px rgba(255,255,255,.05),
-				0 7px 14px rgba(255,255,255,.14);
+	0 7px 14px rgba(255,255,255,.14);
 }
 
 .header__container .fas {
@@ -46,6 +40,13 @@ header {
 	color: #fff;
 }
 
+/* MAIN */
+.fbx {
+	/* flexbox */
+	display: flex;
+	align-items: center;
+}
+
 section {
 	background-position: right center;
 	background-repeat: no-repeat;
@@ -53,12 +54,40 @@ section {
 	padding: 0 15px;
 }
 
-section.right {
-	background-position: left center;
-}
-
 section:first-child {
 	background-size: cover;
+}
+
+h1 {
+	margin-bottom: 40px;
+	padding-bottom: 9px;
+}
+.line{
+	position: relative;
+	top: 50%;
+	width: 10em;
+	margin: 0 auto;
+	border-right: 2px solid rgba(255,255,255,.75);
+	font-size: 4em;
+	font-weight: 300;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);
+}
+
+/* Title Animation */
+.anim-text{
+	animation: typewriter 3s steps(44) 1s 1 normal both,
+	blinkTextCursor 300ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+	from{width: 0;}
+	to{width: 10em;}
+}
+@keyframes blinkTextCursor{
+	from{border-right-color: rgba(255,255,255,.75);}
+	to{border-right-color: transparent;}
 }
 
 .sec_container {
@@ -69,6 +98,10 @@ section:first-child {
 	color: #fff;
 }
 
+section.right {
+	background-position: left center;
+}
+
 .right .sec_container {
 	text-align: right;
 }
@@ -76,12 +109,6 @@ section:first-child {
 .sec_container.home {
 	padding-top: 250px;
 	text-align: center;
-}
-
-h1 {
-	font-size: 56px;
-	font-weight: 300;
-	margin-bottom: 40px;
 }
 
 .sec_link {
@@ -200,8 +227,8 @@ h2 {
 	}
 }
 @media (max-width: 720px){
-	h1 {
-		font-size: 45px;
+	.line {
+		font-size: 3em;
 	}
 	.sec_link {
 		padding: 15px 30px;
